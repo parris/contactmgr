@@ -1,10 +1,10 @@
-from django.conf.urls import patterns, include, url
+from django.conf.urls import patterns, url
 
 from contacts import views
 
 urlpatterns = patterns('',
     # Examples:
-    
+
     # url(r'^$', 'contactmgr.views.home', name='home'),
     # url(r'^contactmgr/', include('contactmgr.foo.urls')),
 
@@ -14,6 +14,6 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^$', views.ListContactsView.as_view(), 
-	name='contacts-list'),
+    url(r'^$', views.ListContactsView.as_view(), name='contacts-list',),
+    url(r'^new$', views.CreateContactView.as_view(), name='contacts-new',),
 )
